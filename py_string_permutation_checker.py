@@ -1,4 +1,4 @@
-def string_permutation_checker(s1: str, s2: str) -> bool:
+""" def string_permutation_checker(s1: str, s2: str) -> bool:
 	counter_01 = 0
 	if len(s1) == 0 and len(s2) == 0:
 		return True
@@ -12,7 +12,15 @@ def string_permutation_checker(s1: str, s2: str) -> bool:
 		else:
 			return False
 	
-	return True
+	return True """
+def string_permutation_checker(s1: str, s2: str) -> bool:
+	copy_01 = s1.replace(" ", "")
+	copy_02 = s2.replace(" ", "")
+
+	if sorted(copy_01) == sorted(copy_02):
+		return True
+	else:
+		return False
 
 if __name__ == "__main__":
 	print(string_permutation_checker("abc", "bca"), "# Expected: True")  # Expected: True
